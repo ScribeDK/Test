@@ -1,0 +1,36 @@
+<html>
+
+<head>
+    <title>The Magical Cat Button</title>
+</head>
+
+<body>
+    <button id="catButton">magical cat button</button>
+    <div id="images">
+
+    </div>
+    <script src='http://code.jquery.com/jquery-2.1.3.min.js'></script>
+    <script type="text/javascript">
+
+    //
+    $('#catButton').on('click', function() {
+
+        //LATITUDE,LONGITUDE
+        var queryURL = "https://api.forecast.io/forecast/611930368d59a7e21da6b5760e67d009/30,140";
+
+        //
+        $.ajax({url: queryURL, method: 'GET'})
+
+            //
+            .done(function(response) {
+			
+			console.log(response);
+			//$("#images").html("<img width=" + response.data.image_width + " height=" + response.data.image_height + " src=" + response.data.image_url + " />");
+			//var image = $("<img width=" + response.data.image_width + " height=" + response.data.image_height + " src=" + response.data.image_url + " />");	
+			//$("#images").html(image);
+            });
+    });
+    </script>
+</body>
+
+</html>
